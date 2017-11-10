@@ -29,6 +29,10 @@ public class NetworkPlayer : NetworkBehaviour {
 			transform.position = new Vector3(0, 0, 30);
 			transform.eulerAngles = new Vector3(0, 180, 0);
 		}
+
+		Debug.Log("isServer " + Network.isServer);
+		Debug.Log("isClient " + Network.isClient);
+		Debug.Log("isClient " + Network.peerType);
 	}
 	
 	// Update is called once per frame

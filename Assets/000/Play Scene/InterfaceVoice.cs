@@ -48,7 +48,6 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 print("QQQ");
 				Application.Quit();
                 break;
-
         }
         return true;
     }
