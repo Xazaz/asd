@@ -62,19 +62,17 @@ public class NetworkPlayer : NetworkBehaviour {
 		canWall = false;
 		do
 		{
-			Debug.Log("moving up");
-			gameplayObj[wall].transform.Translate(Vector3.up * Time.deltaTime * 5);
+			gameplayObj[wall].transform.Translate(Vector3.up * Time.deltaTime * 8);
 			yield return null;
-		}while (gameplayObj[wall].transform.position.y >= 1.3);
+		}while (gameplayObj[wall].transform.position.y <= 1.3f);
 
-		yield return new WaitForSeconds(0.6f);
+		yield return new WaitForSeconds(1f);
 
 		do
 		{
-			Debug.Log("moving down");
-			gameplayObj[wall].transform.Translate(-Vector3.up * Time.deltaTime * 5);
+			gameplayObj[wall].transform.Translate(-Vector3.up * Time.deltaTime * 8);
 			yield return null;
-		}while (gameplayObj[wall].transform.position.y <= 1.6);
+		}while (gameplayObj[wall].transform.position.y >= -1.6f);
 
 		canWall = true;
 	}
