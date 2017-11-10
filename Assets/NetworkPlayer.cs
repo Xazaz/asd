@@ -22,8 +22,7 @@ public class NetworkPlayer : NetworkBehaviour {
 		{
 			GetComponent<AvatarController>().enabled = false;
 		}
-
-		if (NetworkManager.singleton.GetComponent<NetworkMigrationManager>().oldServerConnectionId == 1)
+		else if (NetworkManager.singleton.GetComponent<NetworkMigrationManager>().oldServerConnectionId == 1)
 		{
 			transform.position = new Vector3(0, 0, 30);
 			transform.eulerAngles = new Vector3(0, 180, 0);
