@@ -37,7 +37,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 print("AAA");
 				canvas.SetActive(false);
                 break;
-            case "OPTION":
+            case "OPTIONN":
                 print("OOO");
 			if (slider.activeSelf)
 				slider.SetActive(false);
