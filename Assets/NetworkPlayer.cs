@@ -48,7 +48,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (gestureListener.IsSwipeLeft())
 		{
-			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[0], transform.position, transform.rotation);
+			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[0], new Vector3(transform.position.x, 2.6f, transform.position.z), transform.rotation);
 			NetworkServer.Spawn(tree);
 			//NetworkServer.SpawnWithClientAuthority(gameplayObj[2], connectionToClient);
 			//Network.Instantiate(gameplayObj[2], transform.position, transform.rotation, 0);
@@ -56,7 +56,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (gestureListener.IsSwipeRight())
 		{
-			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[1], transform.position, transform.rotation);
+			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[1], new Vector3(transform.position.x, 2.6f, transform.position.z), transform.rotation);
 			NetworkServer.Spawn(tree);
 			//NetworkServer.SpawnWithClientAuthority(gameplayObj[3], connectionToClient);
 			//Network.Instantiate(gameplayObj[3], transform.position, transform.rotation, 0);
@@ -66,6 +66,7 @@ public class NetworkPlayer : NetworkBehaviour {
 	IEnumerator wallUp(int wall)
 	{
 		canWall = false;
+
 		do
 		{
 			gameplayObj[wall].transform.Translate(Vector3.up * Time.deltaTime * 8);
