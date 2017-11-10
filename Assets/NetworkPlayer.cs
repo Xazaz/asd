@@ -11,7 +11,7 @@ public class NetworkPlayer : NetworkBehaviour {
 	public CubeGestureListener gestureListener;
 	public GameObject[] gameplayObj;
 
-	bool canWall = true;
+	public bool canWall = true;
 
 	// Use this for initialization
 	void Start () 
@@ -36,8 +36,10 @@ public class NetworkPlayer : NetworkBehaviour {
 	{
 		if (gestureListener.IsSwipeUp())
 		{
-			if (canWall) StartCoroutine(wallUp(0));
-
+            if (canWall)
+            {
+                StartCoroutine(wallUp(0));
+            }
 			Debug.Log("testssadsadsa");
 		}
 
