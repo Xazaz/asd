@@ -36,14 +36,14 @@ public class NetworkPlayer : NetworkBehaviour {
 	{
 		if (gestureListener.IsSwipeUp())
 		{
-			if (canWall) StartCoroutine(wallUp(gameplayObj[0]));
+			if (canWall) StartCoroutine(wallUp(0));
 
 			Debug.Log("testssadsadsa");
 		}
 
 
 		if (gestureListener.IsSwipeDown())
-		if (canWall) StartCoroutine(wallUp(gameplayObj[1]));
+		if (canWall) StartCoroutine(wallUp(1));
 
 		if (gestureListener.IsSwipeLeft())
 		{
@@ -56,22 +56,22 @@ public class NetworkPlayer : NetworkBehaviour {
 		}
 	}
 
-	IEnumerator wallUp(GameObject wall)
+	IEnumerator wallUp(int wall)
 	{
 		canWall = false;
 		do
 		{
-			wall.transform.Translate(Vector3.up * Time.deltaTime * 5);
+			gameplayObj[wall].transform.Translate(Vector3.up * Time.deltaTime * 5);
 			yield return null;
-		}while (wall.transform.position.y >= 1.3);
+		}while (gameplayObj[wall].transform.position.y >= 1.3);
 
 		yield return new WaitForSeconds(0.6f);
 
 		do
 		{
-			wall.transform.Translate(-Vector3.up * Time.deltaTime * 5);
+			gameplayObj[wall].transform.Translate(-Vector3.up * Time.deltaTime * 5);
 			yield return null;
-		}while (wall.transform.position.y <= 1.6);
+		}while (gameplayObj[wall].transform.position.y <= 1.6);
 
 		canWall = true;
 	}
