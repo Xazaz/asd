@@ -36,6 +36,10 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 print("AAA");
 				canvas.SetActive(false);
                 break;
+            case "OPTION":
+                print("OOO");
+                canvas.SetActive(false);
+                break;
             case "QUITT":
                 print("QQQ");
 				Application.Quit();

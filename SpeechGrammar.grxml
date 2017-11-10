@@ -35,6 +35,13 @@
         </one-of>
       </item>
 	   <item>
+        <tag>OPTIONN</tag>
+        <one-of>
+          <item>option</item>
+		  <item>options</item>
+        </one-of>
+      </item>
+	   <item>
         <tag>QUITT</tag>
         <one-of>
           <item>quits</item>
