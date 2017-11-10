@@ -48,12 +48,15 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (gestureListener.IsSwipeLeft())
 		{
-			Network.Instantiate(gameplayObj[2], transform.position, transform.rotation, 0);
+
+			NetworkServer.SpawnWithClientAuthority(gameplayObj[2], connectionToClient);
+			//Network.Instantiate(gameplayObj[2], transform.position, transform.rotation, 0);
 		}
 
 		if (gestureListener.IsSwipeRight())
 		{
-			Network.Instantiate(gameplayObj[3], transform.position, transform.rotation, 0);
+			NetworkServer.SpawnWithClientAuthority(gameplayObj[3], connectionToClient);
+			//Network.Instantiate(gameplayObj[3], transform.position, transform.rotation, 0);
 		}
 	}
 
