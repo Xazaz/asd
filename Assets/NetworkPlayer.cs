@@ -48,13 +48,17 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (gestureListener.IsSwipeLeft())
 		{
-			NetworkServer.SpawnWithClientAuthority(gameplayObj[2], connectionToClient);
+			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[0], transform.position, transform.rotation);
+			NetworkServer.Spawn(tree);
+			//NetworkServer.SpawnWithClientAuthority(gameplayObj[2], connectionToClient);
 			//Network.Instantiate(gameplayObj[2], transform.position, transform.rotation, 0);
 		}
 
 		if (gestureListener.IsSwipeRight())
 		{
-			NetworkServer.SpawnWithClientAuthority(gameplayObj[3], connectionToClient);
+			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[1], transform.position, transform.rotation);
+			NetworkServer.Spawn(tree);
+			//NetworkServer.SpawnWithClientAuthority(gameplayObj[3], connectionToClient);
 			//Network.Instantiate(gameplayObj[3], transform.position, transform.rotation, 0);
 		}
 	}
