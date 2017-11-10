@@ -39,7 +39,10 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 break;
             case "OPTION":
                 print("OOO");
-			slider.SetActive(true);
+			if (slider.activeSelf)
+				slider.SetActive(false);
+			else
+				slider.SetActive(true);
                 break;
             case "QUITT":
                 print("QQQ");
