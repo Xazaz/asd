@@ -9,6 +9,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
     private bool playNow;
     private bool aiNow;
 	public NetworkManager nm;
+	public GameObject canvas;
 
     public bool SpeechPhraseRecognized(string phraseTag, float condidence)
     {
@@ -23,15 +24,17 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 print("JJJ");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.ListMatches(0, 10, "", true, 0, 0, OnMatchList);
+				canvas.SetActive(false);
                 break;
             case "CREATEE":
                 print("CCC");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.CreateMatch("test", 2, true, "", "", "", 0, 0, OnMatchCreate);
+				canvas.SetActive(false);
                 break;
             case "AII":
                 print("AAA");
-                aiNow = true;
+				canvas.SetActive(false);
                 break;
             case "QUITT":
                 print("QQQ");
@@ -55,27 +58,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 	public void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo)
 	{
 		
+
 	}
-
-    // invoked when a speech phrase gets recognized
-    //public bool SpeechPhraseRecognized(string phraseTag, float condidence)
-    //{
-    ////    print(phraseTag);
-    ////    switch (phraseTag)
-    ////    {
-    ////        case "PLAY":
-    ////            print("GGG");
-    ////            playNow = true;
-    ////            Application.LoadLevel(1);
-    ////            break;
-    ////    }
-
-    ////    return true;
-    //}
-
-    void FixedUpdate()
-    {
-      
-    }
 }
 
