@@ -23,7 +23,7 @@ public class NetworkPlayer : NetworkBehaviour {
 			GetComponent<AvatarController>().enabled = false;
 		}
 
-		if (Network.isServer)
+		if (NetworkManager.singleton.GetComponent<NetworkMigrationManager>().oldServerConnectionId == 1)
 		{
 			Debug.Log("I am server");
 			transform.position = new Vector3(0, 0, 30);
