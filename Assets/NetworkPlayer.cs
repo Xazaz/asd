@@ -25,6 +25,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (Network.isServer)
 		{
+			Debug.Log("I am server");
 			transform.position = new Vector3(0, 0, 30);
 			transform.eulerAngles = new Vector3(0, 180, 0);
 		}
@@ -34,7 +35,12 @@ public class NetworkPlayer : NetworkBehaviour {
 	void Update () 
 	{
 		if (gestureListener.IsSwipeUp())
-		if (canWall) StartCoroutine(wallUp(gameplayObj[0]));
+		{
+			if (canWall) StartCoroutine(wallUp(gameplayObj[0]));
+
+			Debug.Log("testssadsadsa");
+		}
+
 
 		if (gestureListener.IsSwipeDown())
 		if (canWall) StartCoroutine(wallUp(gameplayObj[1]));
