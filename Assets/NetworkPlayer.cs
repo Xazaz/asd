@@ -35,31 +35,25 @@ public class NetworkPlayer : NetworkBehaviour {
 	void Update () 
 	{
 		if (gestureListener.IsSwipeUp())
-		{
             if (canWall)
-            {
                 StartCoroutine(wallUp(0));
-            }
-		}
 
 
 		if (gestureListener.IsSwipeDown())
-		if (canWall) StartCoroutine(wallUp(1));
+			if (canWall) 
+				StartCoroutine(wallUp(1));
 
 		if (gestureListener.IsSwipeLeft())
 		{
-			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[0], new Vector3(transform.position.x, 2.6f, transform.position.z), transform.rotation);
-			NetworkServer.Spawn(tree);
-			//NetworkServer.SpawnWithClientAuthority(gameplayObj[2], connectionToClient);
-			//Network.Instantiate(gameplayObj[2], transform.position, transform.rotation, 0);
+			GameObject ball = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[0], new Vector3(transform.position.x, 2.6f, transform.position.z), transform.rotation);
+			NetworkServer.Spawn(ball);
 		}
 
 		if (gestureListener.IsSwipeRight())
 		{
-			GameObject tree = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[1], new Vector3(transform.position.x, 2.6f, transform.position.z), transform.rotation);
-			NetworkServer.Spawn(tree);
-			//NetworkServer.SpawnWithClientAuthority(gameplayObj[3], connectionToClient);
-			//Network.Instantiate(gameplayObj[3], transform.position, transform.rotation, 0);
+			GameObject ball = (GameObject)Instantiate(NetworkManager.singleton.spawnPrefabs[1], new Vector3(transform.position.x, 2.6f, transform.position.z), transform.rotation);
+			NetworkServer.Spawn(ball);
+
 		}
 	}
 
