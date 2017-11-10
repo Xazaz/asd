@@ -32,7 +32,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		Debug.Log("isServer " + Network.isServer);
 		Debug.Log("isClient " + Network.isClient);
-		Debug.Log("isClient " + Network.peerType);
+		Debug.Log(Network.connections.Length);
 	}
 	
 	// Update is called once per frame
