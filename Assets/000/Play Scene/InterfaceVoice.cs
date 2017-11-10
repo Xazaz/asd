@@ -23,7 +23,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 playNow = true;
                 break;
             case "JOINN":
-			if (ingame) return;
+			if (ingame) return true;
                 print("JJJ");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.ListMatches(0, 10, "", true, 0, 0, OnMatchList);
@@ -31,7 +31,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 			ingame = true;
                 break;
             case "CREATEE":
-			if (ingame) return;
+			if (ingame) return true;
                 print("CCC");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.CreateMatch("test", 2, true, "", "", "", 0, 0, OnMatchCreate);

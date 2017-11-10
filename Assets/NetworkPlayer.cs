@@ -8,10 +8,10 @@ public class NetworkPlayer : NetworkBehaviour {
 	[SyncVar]
 	public int hp = 10;
 
-	CubeGestureListener gestureListener;
+	public CubeGestureListener gestureListener;
 	public GameObject[] gameplayObj;
 
-	bool canWall;
+	bool canWall = true;
 
 	// Use this for initialization
 	void Start () 
@@ -47,12 +47,12 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (gestureListener.IsSwipeLeft())
 		{
-			NetworkServer.Spawn(gameplayObj[3]);
+			NetworkServer.Spawn(gameplayObj[2]);
 		}
 
 		if (gestureListener.IsSwipeRight())
 		{
-			NetworkServer.Spawn(gameplayObj[4]);
+			NetworkServer.Spawn(gameplayObj[3]);
 		}
 	}
 
