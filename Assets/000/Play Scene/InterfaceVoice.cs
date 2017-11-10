@@ -9,11 +9,12 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
     private bool playNow;
     private bool aiNow;
 	public NetworkManager nm;
-	public GameObject canvas;
+	public GameObject canvas, slider;
 
     public bool SpeechPhraseRecognized(string phraseTag, float condidence)
     {
         print(phraseTag);
+		if (!canvas.activeSelf) return true;
         switch (phraseTag)
         {
             case "NOW":
@@ -21,14 +22,12 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 playNow = true;
                 break;
             case "JOINN":
-			if (!canvas.activeSelf) return true;
                 print("JJJ");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.ListMatches(0, 10, "", true, 0, 0, OnMatchList);
 				canvas.SetActive(false);
                 break;
             case "CREATEE":
-			if (!canvas.activeSelf) return true;
                 print("CCC");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.CreateMatch("test", 2, true, "", "", "", 0, 0, OnMatchCreate);
@@ -40,7 +39,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 break;
             case "OPTION":
                 print("OOO");
-                canvas.SetActive(false);
+			slider.SetActive(true);
                 break;
             case "QUITT":
                 print("QQQ");
