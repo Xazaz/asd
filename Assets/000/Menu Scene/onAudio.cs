@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 public class onAudio : MonoBehaviour {
     public AudioMixer masterMixer;
-	public AudioSource audio;
+	public AudioSource audioSource;
     public Slider musicSlide;
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,6 @@ public class onAudio : MonoBehaviour {
         masterMixer.SetFloat("musicVol", musicLvl);
         float temp;
         masterMixer.GetFloat("musicVol", out temp);
-        audio.volume = temp;
+		audioSource.volume = temp;
     }
 }

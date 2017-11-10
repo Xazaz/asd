@@ -11,8 +11,6 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 	public NetworkManager nm;
 	public GameObject canvas;
 
-	bool ingame = false;
-
     public bool SpeechPhraseRecognized(string phraseTag, float condidence)
     {
         print(phraseTag);
@@ -23,19 +21,17 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
                 playNow = true;
                 break;
             case "JOINN":
-			if (ingame) return true;
+			if (!canvas.activeSelf) return true;
                 print("JJJ");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.ListMatches(0, 10, "", true, 0, 0, OnMatchList);
 				canvas.SetActive(false);
-			ingame = true;
                 break;
             case "CREATEE":
-			if (ingame) return true;
+			if (!canvas.activeSelf) return true;
                 print("CCC");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.CreateMatch("test", 2, true, "", "", "", 0, 0, OnMatchCreate);
-			ingame = true;
 				canvas.SetActive(false);
                 break;
             case "AII":

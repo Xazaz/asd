@@ -40,7 +40,6 @@ public class NetworkPlayer : NetworkBehaviour {
             {
                 StartCoroutine(wallUp(0));
             }
-			Debug.Log("testssadsadsa");
 		}
 
 
@@ -49,12 +48,12 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (gestureListener.IsSwipeLeft())
 		{
-			NetworkServer.Spawn(gameplayObj[2]);
+			Network.Instantiate(gameplayObj[2], transform.position, transform.rotation, 0);
 		}
 
 		if (gestureListener.IsSwipeRight())
 		{
-			NetworkServer.Spawn(gameplayObj[3]);
+			Network.Instantiate(gameplayObj[3], transform.position, transform.rotation, 0);
 		}
 	}
 
@@ -63,6 +62,7 @@ public class NetworkPlayer : NetworkBehaviour {
 		canWall = false;
 		do
 		{
+			Debug.Log("moving up");
 			gameplayObj[wall].transform.Translate(Vector3.up * Time.deltaTime * 5);
 			yield return null;
 		}while (gameplayObj[wall].transform.position.y >= 1.3);
@@ -71,6 +71,7 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		do
 		{
+			Debug.Log("moving down");
 			gameplayObj[wall].transform.Translate(-Vector3.up * Time.deltaTime * 5);
 			yield return null;
 		}while (gameplayObj[wall].transform.position.y <= 1.6);
