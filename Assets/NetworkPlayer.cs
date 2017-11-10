@@ -25,14 +25,11 @@ public class NetworkPlayer : NetworkBehaviour {
 
 		if (NetworkManager.singleton.GetComponent<NetworkMigrationManager>().oldServerConnectionId == 1)
 		{
-			Debug.Log("I am server");
 			transform.position = new Vector3(0, 0, 30);
 			transform.eulerAngles = new Vector3(0, 180, 0);
+			Camera.main.transform.position = new Vector3(0, 5, 33);
+			Camera.main.transform.eulerAngles = new Vector3(16.283f, 180, 0);
 		}
-
-		Debug.Log("isServer " + Network.isServer);
-		Debug.Log("isClient " + Network.isClient);
-		Debug.Log(Network.connections.Length);
 	}
 	
 	// Update is called once per frame
