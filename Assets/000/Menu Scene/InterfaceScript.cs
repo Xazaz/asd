@@ -12,8 +12,7 @@ public class InterfaceScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         gestureListener = CubeGestureListener.Instance;
-        NetworkManager.singleton.StartMatchMaker();
-        NetworkManager.singleton.matchMaker.CreateMatch("test", 2, true, "", "", "", 0, 0, OnMatchCreate);
+           
     }
 
     public void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
