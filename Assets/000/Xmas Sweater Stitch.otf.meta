@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 92f125c34c031de47a685cde0e4ed20d
+timeCreated: 1510579917
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Xmas Sweater Stitch
+  fontNames:
+  - Xmas Sweater Stitch
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
