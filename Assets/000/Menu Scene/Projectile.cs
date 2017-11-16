@@ -19,12 +19,16 @@ public class Projectile : MonoBehaviour {
 		if (timeDelta > 8) Destroy(gameObject);
 	}
 
-	void OnTriggerEnter3D(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		PlayerMetrics temp;
 		if ((temp = other.GetComponent<PlayerMetrics>()) != null)
 		{
 			--temp.hp;
+			if (temp.hp <=0)
+			{
+				GameObject.FindObjectOfType<LocalManager>().EndGame(other.gameObject.name != "Local Player");
+			}
 		}
 
 		if (other.tag == "FireWall")
@@ -43,9 +47,6 @@ public class Projectile : MonoBehaviour {
 			}
 		}
 
-		if (temp.hp <=0)
-		{
-			GameObject.FindObjectOfType<LocalManager>().EndGame(other.gameObject.name == "Local Player");
-		}
+
 	}
 }
