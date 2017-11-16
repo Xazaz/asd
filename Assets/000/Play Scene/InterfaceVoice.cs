@@ -6,8 +6,6 @@ using UnityEngine.Networking.Match;
 
 public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 {
-    private bool playNow;
-    private bool aiNow;
 	public NetworkManager nm;
 	public GameObject canvas, slider, localManager;
 
@@ -17,10 +15,6 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 		if (!canvas.activeSelf) return true;
         switch (phraseTag)
         {
-            case "NOW":
-                print("GGG");
-                playNow = true;
-                break;
             case "JOINN":
                 print("JJJ");
 				NetworkManager.singleton.StartMatchMaker();
@@ -33,10 +27,13 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 				NetworkManager.singleton.matchMaker.CreateMatch("test", 2, true, "", "", "", 0, 0, OnMatchCreate);
 				canvas.SetActive(false);
                 break;
+			case "NOW":
+				print("GGG");
+			break;
             case "AII":
                 print("AAA");
 				canvas.SetActive(false);
-			localManager.SetActive(true);
+				localManager.SetActive(true);
                 break;
             case "OPTIONN":
                 print("OOO");

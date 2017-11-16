@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LocalManager : MonoBehaviour {
     public GameObject[] screens;
@@ -54,7 +55,7 @@ public class LocalManager : MonoBehaviour {
 		AIClock += Time.deltaTime;
 		if (AIClock >= AIClock_max)
 		{
-			if (Random.Range(0,4) >= 1)
+			if (Random.Range(0,3) >= 1)
 			{
 				if (Random.Range(0,2) == 1)
 				{
@@ -109,6 +110,6 @@ public class LocalManager : MonoBehaviour {
         }
         while (time < 5);
 
-		Application.LoadLevel(0);
+		SceneManager.LoadScene(0);
     }
 }
