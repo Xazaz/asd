@@ -8,10 +8,22 @@ public class LocalManager : MonoBehaviour {
     CubeGestureListener gestureListener;
 
 	//AI
+	float AIClock, AIClock_max;
 
     // Use this for initialization
     void Start () 
 	{
+		AIClock = 0;
+		AIClock_max = 0;
+		if (Random.Range(0,2) == 1)
+		{
+			playerObjs[1].SwipeLeft();
+		}
+		else
+		{
+			playerObjs[1].SwipeRight();
+		}
+
         gestureListener = CubeGestureListener.Instance;
     }
 	
@@ -38,6 +50,35 @@ public class LocalManager : MonoBehaviour {
 			playerObjs[0].SwipeRight();
         }
 
+		//AI
+		AIClock += Time.deltaTime;
+		if (AIClock >= AIClock_max)
+		{
+			if (Random.Range(0,4) >= 1)
+			{
+				if (Random.Range(0,2) == 1)
+				{
+					playerObjs[1].SwipeLeft();
+				}
+				else
+				{
+					playerObjs[1].SwipeRight();
+				}
+			}
+			else
+			{
+				if (Random.Range(0,2) == 1)
+				{
+					playerObjs[1].SwipeUp();
+				}
+				else
+				{
+					playerObjs[1].SwipeDown();
+				}
+			}
+
+			AIClock_max = Random.value;
+		}
     }
 
     public void EndGame(bool isplayer)
@@ -53,6 +94,7 @@ public class LocalManager : MonoBehaviour {
             screens[1].SetActive(true);
         }
 
+		GameObject.FindObjectOfType<LocalManager>().gameObject.SetActive(false);
         StartCoroutine(LeaveGame());
     }
 
