@@ -15,7 +15,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 		if (!canvas.activeSelf) return true;
         switch (phraseTag)
         {
-            case "JOINN":
+          /*  case "JOINN":
                 print("JJJ");
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.ListMatches(0, 10, "", true, 0, 0, OnMatchList);
@@ -26,7 +26,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 				NetworkManager.singleton.StartMatchMaker();
 				NetworkManager.singleton.matchMaker.CreateMatch("test", 2, true, "", "", "", 0, 0, OnMatchCreate);
 				canvas.SetActive(false);
-                break;
+                break; */
 			case "NOW":
 				print("GGG");
 			break;

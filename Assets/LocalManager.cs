@@ -14,8 +14,8 @@ public class LocalManager : MonoBehaviour {
     // Use this for initialization
     void Start () 
 	{
-		AIClock = 0;
-		AIClock_max = 0;
+		AIClock = 0f;
+		AIClock_max = 0f;
 		if (Random.Range(0,2) == 1)
 		{
 			playerObjs[1].SwipeLeft();
@@ -78,7 +78,7 @@ public class LocalManager : MonoBehaviour {
 				}
 			}
 
-			AIClock_max = Random.value;
+			AIClock_max = Random.value + 1.5f;
 		}
     }
 
