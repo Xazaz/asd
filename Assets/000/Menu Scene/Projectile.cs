@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class Projectile : NetworkBehaviour {
+public class Projectile : MonoBehaviour {
 
 	float timeDelta;
 
@@ -17,13 +16,13 @@ public class Projectile : NetworkBehaviour {
 	{
 		transform.Translate(Vector3.forward * Time.deltaTime * 5);
 		timeDelta += Time.deltaTime;
-		if (timeDelta > 8) Network.Destroy(gameObject);
+		if (timeDelta > 8) Destroy(gameObject);
 	}
 
 	void OnTriggerEnter3D(Collider other)
 	{
-		NetworkPlayer temp;
-		if ((temp = other.GetComponent<NetworkPlayer>()) != null)
+		PlayerMetrics temp;
+		if ((temp = other.GetComponent<PlayerMetrics>()) != null)
 		{
 			--temp.hp;
 		}
@@ -32,7 +31,7 @@ public class Projectile : NetworkBehaviour {
 		{
 			if (gameObject.tag == "Ice")
 			{
-				Network.Destroy(gameObject);
+				Destroy(gameObject);
 			}
 		}
 
@@ -40,9 +39,13 @@ public class Projectile : NetworkBehaviour {
 		{
 			if (gameObject.tag == "Fire")
 			{
-				Network.Destroy(gameObject);
+				Destroy(gameObject);
 			}
 		}
 
+		if (temp.hp <=0)
+		{
+			GameObject.FindObjectOfType<LocalManager>().EndGame(other.gameObject.name == "Local Player");
+		}
 	}
 }

@@ -5,10 +5,13 @@ using UnityEngine;
 public class LocalManager : MonoBehaviour {
     public GameObject[] screens;
     public PlayerMetrics[] playerObjs;
-    public CubeGestureListener gestureListener;
+    CubeGestureListener gestureListener;
+
+	//AI
 
     // Use this for initialization
-    void Start () {
+    void Start () 
+	{
         gestureListener = CubeGestureListener.Instance;
     }
 	
@@ -17,22 +20,22 @@ public class LocalManager : MonoBehaviour {
     {
         if (gestureListener.IsSwipeUp())
         {
-
+			playerObjs[0].SwipeUp();
         }
-
 
         if (gestureListener.IsSwipeDown())
         {
-
+			playerObjs[0].SwipeDown();
         }
 
         if (gestureListener.IsSwipeLeft())
         {
+			playerObjs[0].SwipeLeft();
         }
 
         if (gestureListener.IsSwipeRight())
         {
-
+			playerObjs[0].SwipeRight();
         }
 
     }
@@ -63,5 +66,7 @@ public class LocalManager : MonoBehaviour {
             yield return null;
         }
         while (time < 5);
+
+		Application.LoadLevel(0);
     }
 }

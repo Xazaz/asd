@@ -9,7 +9,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
     private bool playNow;
     private bool aiNow;
 	public NetworkManager nm;
-	public GameObject canvas, slider;
+	public GameObject canvas, slider, localManager;
 
     public bool SpeechPhraseRecognized(string phraseTag, float condidence)
     {
@@ -36,6 +36,7 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
             case "AII":
                 print("AAA");
 				canvas.SetActive(false);
+			localManager.SetActive(true);
                 break;
             case "OPTIONN":
                 print("OOO");
