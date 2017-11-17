@@ -7,10 +7,14 @@ public class PlayerMetrics : MonoBehaviour {
     public byte hp;
     public bool canWall = true;
 	public GameObject[] gameplayObj;
+	public bool isAI;
+
+	Animator anim;
 
     void Start () 
 	{
 		Reset();
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -26,23 +30,42 @@ public class PlayerMetrics : MonoBehaviour {
 	public void SwipeUp()
 	{
 		if (canWall) 
+		{
 			StartCoroutine(wallUp(0));
+			if (isAI)
+			{
+				anim.Play("Block");
+			}
+		}
+
+
 	}
 
 	public void SwipeDown()
 	{
-		if (canWall) 
+		if (canWall)
+		{
 			StartCoroutine(wallUp(1));
+			if (isAI)
+			{
+				anim.Play("Block");
+			}
+		}
 	}
 
 	public void SwipeLeft()
 	{
 		Instantiate(gameplayObj[2], new Vector3(transform.position.x, 2.6f, transform.position.z) + transform.forward*2, transform.rotation);
+		if (isAI)
+		{
+			anim.Play("Attack1");
+		}
 	}
 
 	public void SwipeRight()
 	{
 		Instantiate(gameplayObj[3], new Vector3(transform.position.x, 2.6f, transform.position.z) + transform.forward*2, transform.rotation);
+		anim.Play("Attack2");
 	}
 
 	IEnumerator wallUp(int wall)
