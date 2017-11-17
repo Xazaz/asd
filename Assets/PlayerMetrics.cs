@@ -37,8 +37,6 @@ public class PlayerMetrics : MonoBehaviour {
 				anim.Play("Block");
 			}
 		}
-
-
 	}
 
 	public void SwipeDown()
