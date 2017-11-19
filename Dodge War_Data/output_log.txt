@@ -1,0 +1,98 @@
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   23.21.13.8813
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\LZ4Sharp.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\LZ4Sharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\ICSharpCode.SharpZipLib.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\ICSharpCode.SharpZipLib.dll into Unity Child Domain
+- Completed reload, in  0.220 seconds
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Joshua\Documents\GitHub\asd\Dodge War_Data\Managed\System.dll (this message is harmless)
+desktop: 2560x1080 60Hz; virtual: 6400x1208 at -1920,-128
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.009280 ms
+x32-architecture detected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Could not delete file: ./KinectUnityAddin.dll
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+KM is restarting level...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1456.
+Total: 0.919680 ms (FindLiveObjects: 0.075840 ms CreateObjectMapping: 0.047680 ms MarkObjects: 0.470720 ms  DeleteObjects: 0.324480 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.668480 ms
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/.\Kinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/.\Kinect10
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/.\libKinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/.\Kinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/.\Kinect10
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/Kinect10
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/libKinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/.\libKinect10.dll
+Fallback handler could not load library C:/Users/Joshua/Documents/GitHub/asd/Dodge War_Data/Mono/libKinect10.dll
+No sensor found. Make sure you have installed the SDK and the sensor is connected.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Exception: No sensor found. Make sure you have installed the SDK and the sensor is connected.
+  at KinectManager.StartKinect () [0x00000] in <filename unknown>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+KinectManager:StartKinect()
+KinectManager:Awake()
+ 
+(Filename:  Line: -1)
+
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1467.
+Total: 1.424000 ms (FindLiveObjects: 0.073280 ms CreateObjectMapping: 0.048960 ms MarkObjects: 0.624960 ms  DeleteObjects: 0.675840 ms)
+
+Setting up 6 worker threads for Enlighten.
+  Thread -> id: 634 -> priority: 1 
+  Thread -> id: ebc -> priority: 1 
+  Thread -> id: 2fb8 -> priority: 1 
+  Thread -> id: 17b8 -> priority: 1 
+  Thread -> id: 2b70 -> priority: 1 
+  Thread -> id: 2938 -> priority: 1 
+Internal: JobTempAlloc has allocations that are more than 4 frames old - this is not allowed and likely a leak
+ 
+(Filename:  Line: 371)
+
