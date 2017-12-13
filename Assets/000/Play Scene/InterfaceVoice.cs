@@ -65,5 +65,16 @@ public class InterfaceVoice : MonoBehaviour, SpeechRecognitionInterface
 		
 
 	}
+    public void clickStart()
+    {
+        print("AAA");
+        canvas.SetActive(false);
+        localManager.SetActive(true);
+    }
+    public void clickQuit()
+    {
+        print("QQQ");
+        Application.Quit();
+    }
 }
 
