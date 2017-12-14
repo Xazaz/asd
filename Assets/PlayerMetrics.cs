@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMetrics : MonoBehaviour {
 
     public byte hp;
@@ -10,6 +10,7 @@ public class PlayerMetrics : MonoBehaviour {
 	public bool isAI;
 
 	Animator anim;
+    public Text healthText;
 
     void Start () 
 	{
@@ -19,7 +20,10 @@ public class PlayerMetrics : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (isAI)
+            healthText.text = "Monster HP: " + hp;
+        else
+            healthText.text = "Player HP: " + hp;
 	}
 
     public void Reset()

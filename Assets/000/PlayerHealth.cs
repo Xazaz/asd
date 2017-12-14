@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
     public int maxHealth = 100;
     public int curHealth = 100;
-
+    public Text hpText;
 
 
 
@@ -17,6 +18,8 @@ public class PlayerHealth : MonoBehaviour {
     void Update()
     {
         AddjustCurrentHealth(0);
+        hpText.text = "Player HP:" + curHealth;
+
 
     }
 
